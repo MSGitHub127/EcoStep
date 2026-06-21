@@ -1,0 +1,10 @@
+import '@testing-library/jest-dom/vitest'
+import { afterEach } from 'vitest'
+import { cleanup } from '@testing-library/react'
+
+// Unmount React trees between tests so effects/timers from one test
+// can't leak into the next.
+afterEach(() => {
+  cleanup()
+  window.localStorage.clear()
+})

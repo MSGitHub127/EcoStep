@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoStep</title>
+    <meta name="description" content="EcoStep — a frictionless daily carbon tracker." />
+    <meta name="theme-color" content="#1A1A1A" />
+
+    <!--
+      Content-Security-Policy: the app is fully client-side (no backend, no
+      auth, no API calls) and persists only to localStorage, so the policy
+      below is deliberately tight. style-src needs 'unsafe-inline' because
+      several components set dynamic inline styles (progress-bar widths,
+      stagger animation-delays) via React's style prop — CSS injection is a
+      much lower-severity risk than script injection, so this tradeoff is
+      scoped to style-src only. Tighten further (e.g. nonces) if those
+      inline styles are ever moved to CSS custom properties instead.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231A1A1A'/%3E%3Crect x='15' y='25' width='70' height='50' rx='8' fill='none' stroke='%23F9F6F0' stroke-opacity='0.4' stroke-width='4'/%3E%3Crect x='15' y='25' width='70' height='50' rx='8' fill='%238F9E8B'/%3E%3Cline x1='50' y1='25' x2='50' y2='75' stroke='%231A1A1A' stroke-opacity='0.25' stroke-width='3'/%3E%3Ccircle cx='50' cy='50' r='12' fill='none' stroke='%231A1A1A' stroke-opacity='0.25' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
